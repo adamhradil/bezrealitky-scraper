@@ -1,0 +1,410 @@
+[
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/661352-nabidka-pronajem-bytu-krokova",
+		"location": "Krokova, Praha - Nusle",
+		"price": "16 500 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/698504-nabidka-pronajem-bytu-jablonova-hlavni-mesto-praha",
+		"location": "Jabloňová, Praha - Záběhlice",
+		"price": "29 000 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/467461-nabidka-pronajem-bytu-na-dedinach-praha",
+		"location": "Na Dědinách, Praha - Michle",
+		"price": "24 000 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/667420-nabidka-pronajem-bytu-laponska-hlavni-mesto-praha",
+		"location": "Laponská, Praha - Hloubětín",
+		"price": "22 500 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/762233-nabidka-pronajem-bytu-na-hrebenech-praha",
+		"location": "Na Hřebenech Ⅰ, Praha - Podolí",
+		"price": "35 000 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/778565-nabidka-pronajem-bytu-olgy-havlove-praha",
+		"location": "Olgy Havlové, Praha - Žižkov",
+		"price": "24 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/558245-nabidka-pronajem-bytu-holeckova",
+		"location": "Holečkova, Praha - Košíře",
+		"price": "14 900 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/750894-nabidka-pronajem-bytu-sousedikova-praha",
+		"location": "Sousedíkova, Praha - Vysočany",
+		"price": "30 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/725839-nabidka-pronajem-bytu-vymarova-praha",
+		"location": "Výmarova, Praha - Nedvězí u Říčan",
+		"price": "19 999 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/712894-nabidka-pronajem-bytu-novostrasnicka-praha-strasnice",
+		"location": "Novostrašnická, Praha - Strašnice",
+		"price": "18 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/720652-nabidka-pronajem-bytu-hekrova",
+		"location": "Hekrova, Praha - Háje",
+		"price": "15 900 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/685115-nabidka-pronajem-bytu-horska-hlavni-mesto-praha",
+		"location": "Horská, Praha - Nové Město",
+		"price": "29 800 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/614902-nabidka-pronajem-bytu-mexicka-praha",
+		"location": "Mexická, Praha - Vršovice",
+		"price": "22 800 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/511446-nabidka-pronajem-bytu-mahenova-smichov",
+		"location": "Mahenova, Praha - Košíře",
+		"price": "18 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/695002-nabidka-pronajem-bytu-tusarova-praha",
+		"location": "Tusarova, Praha - Holešovice",
+		"price": "25 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/779458-nabidka-pronajem-bytu-ceskomoravska-praha",
+		"location": "Českomoravská, Praha - Libeň",
+		"price": "18 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/611491-nabidka-pronajem-bytu-anny-letenske-hlavni-mesto-praha",
+		"location": "Anny Letenské, Praha - Vinohrady",
+		"price": "26 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/729110-nabidka-pronajem-bytu-pod-kavalirkou",
+		"location": "Pod Kavalírkou, Praha - Košíře",
+		"price": "19 990 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/778336-nabidka-pronajem-bytu-hodoninska-praha",
+		"location": "Hodonínská, Praha - Michle",
+		"price": "28 000 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/744364-nabidka-pronajem-bytu-u-noveho-dvora-praha",
+		"location": "U Nového dvora, Praha - Lhotka",
+		"price": "20 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/779670-nabidka-pronajem-bytu-jankovcova",
+		"location": "Jankovcova, Praha - Holešovice",
+		"price": "23 990 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/776904-nabidka-pronajem-bytu-nobelova-praha",
+		"location": "Nobelova, Praha - Vokovice",
+		"price": "24 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/463647-nabidka-pronajem-bytu-na-zlate-praha-13",
+		"location": "Na zlatě, Praha - Stodůlky",
+		"price": "24 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/767707-nabidka-pronajem-bytu-jetrichovicka-hlavni-mesto-praha",
+		"location": "Jetřichovická, Praha - Prosek",
+		"price": "17 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/298625-nabidka-pronajem-bytu-hornomecholupska",
+		"location": "Hornoměcholupská, Praha - Horní Měcholupy",
+		"price": "18 500 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/772529-nabidka-pronajem-bytu-patanka-hlavni-mesto-praha",
+		"location": "Paťanka, Praha - Dejvice",
+		"price": "21 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/632856-nabidka-pronajem-bytu-podkovarska-praha",
+		"location": "Podkovářská, Praha - Vysočany",
+		"price": "22 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/776396-nabidka-pronajem-bytu-korunovacni-praha",
+		"location": "Korunovační, Praha - Bubeneč",
+		"price": "25 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/773239-nabidka-pronajem-bytu-k-beranovu-hlavni-mesto-praha",
+		"location": "K Beranovu, Praha - Dolní Chabry",
+		"price": "20 890 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/585773-nabidka-pronajem-bytu-pod-starkou-praha-4",
+		"location": "Pod Stárkou, Praha - Michle",
+		"price": "22 000 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/775174-nabidka-pronajem-bytu-benesova-hlavni-mesto-praha",
+		"location": "Benešova, Praha - Hlubočepy",
+		"price": "19 500 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/609192-nabidka-pronajem-bytu-merkurova-praha",
+		"location": "Merkurova, Praha - Uhříněves",
+		"price": "14 500 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/531338-nabidka-pronajem-bytu-sanderova-praha",
+		"location": "Sanderova, Praha - Holešovice",
+		"price": "29 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/777307-nabidka-pronajem-bytu-prusikova-hlavni-mesto-praha",
+		"location": "Prusíkova, Praha - Stodůlky",
+		"price": "14 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/296434-nabidka-pronajem-bytu-praha",
+		"location": "Praha - Karlín",
+		"price": "25 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/777161-nabidka-pronajem-bytu-pod-sokolovnou-hlavni-mesto-praha",
+		"location": "Pod Sokolovnou, Praha - Nusle",
+		"price": "14 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/777716-nabidka-pronajem-bytu-zatecka-hlavni-mesto-praha",
+		"location": "Žatecká, Praha - Josefov",
+		"price": "25 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/772282-nabidka-pronajem-bytu-podvinny-mlyn-praha",
+		"location": "Podvinný mlýn, Praha - Libeň",
+		"price": "26 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/728906-nabidka-pronajem-bytu-rumunska",
+		"location": "Rumunská, Praha - Vinohrady",
+		"price": "22 200 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/781467-nabidka-pronajem-bytu-nemosicka-hlavni-mesto-praha",
+		"location": "Nemošická, Praha - Vinoř",
+		"price": "18 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/781739-nabidka-pronajem-bytu-plzakova-hlavni-mesto-praha",
+		"location": "Plzákova, Praha - Kbely",
+		"price": "16 500 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/767332-nabidka-pronajem-bytu-komoranska-praha",
+		"location": "Komořanská, Praha - Modřany",
+		"price": "22 250 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/508582-nabidka-pronajem-bytu-v-mezihori-praha-8",
+		"location": "V Mezihoří, Praha - Libeň",
+		"price": "26 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/575075-nabidka-pronajem-bytu-zateckych-praha-4",
+		"location": "Žateckých, Praha - Strašnice",
+		"price": "19 800 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/511429-nabidka-pronajem-bytu-lovosicka",
+		"location": "Lovosická, Praha - Letňany",
+		"price": "12 000 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/722444-nabidka-pronajem-bytu-mukarovskeho",
+		"location": "Mukařovského, Praha - Stodůlky",
+		"price": "21 900 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/655692-nabidka-pronajem-bytu-jednorada-hlavni-mesto-praha",
+		"location": "Jednořadá, Praha - Bubeneč",
+		"price": "24 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/781755-nabidka-pronajem-bytu-kloboucnicka-praha",
+		"location": "Kloboučnická, Praha - Nusle",
+		"price": "16 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/155256-nabidka-pronajem-bytu-stibrova-praha",
+		"location": "Štíbrova, Praha - Kobylisy",
+		"price": "16 300 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/780080-nabidka-pronajem-bytu-decinska-praha",
+		"location": "Děčínská, Praha - Střížkov",
+		"price": "6 299 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/484979-nabidka-pronajem-bytu-na-malovance",
+		"location": "Na Malovance, Praha - Střešovice",
+		"price": "22 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/386879-nabidka-pronajem-bytu-bohuminska-praha",
+		"location": "Bohumínská, Praha - Letňany",
+		"price": "16 500 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/246778-nabidka-pronajem-bytu-teplicka",
+		"location": "Teplická, Praha - Střížkov",
+		"price": "16 000 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/711483-nabidka-pronajem-bytu-kytlicka-hlavni-mesto-praha",
+		"location": "Kytlická, Praha - Prosek",
+		"price": "19 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/504640-nabidka-pronajem-bytu-voskovcova-praha",
+		"location": "Voskovcova, Praha - Hlubočepy",
+		"price": "14 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/640392-nabidka-pronajem-bytu-lehovecka-hlavni-mesto-praha",
+		"location": "Lehovecká, Praha - Hloubětín",
+		"price": "19 990 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/669189-nabidka-pronajem-bytu-dudova-hlavni-mesto-praha",
+		"location": "Dudova, Praha - Vinohrady",
+		"price": "29 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/778853-nabidka-pronajem-bytu-bartoskova-praha",
+		"location": "Bartoškova, Praha - Nusle",
+		"price": "27 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/780330-nabidka-pronajem-bytu-nad-prehradou-praha",
+		"location": "Nad Přehradou, Praha - Horní Měcholupy",
+		"price": "16 900 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/742347-nabidka-pronajem-bytu-konzumni",
+		"location": "Konzumní, Praha - Hloubětín",
+		"price": "17 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/461948-nabidka-pronajem-bytu-osadni-praha-7",
+		"location": "Osadní, Praha - Holešovice",
+		"price": "15 500 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/389016-nabidka-pronajem-bytu-slezska-praha-3",
+		"location": "Slezská, Praha - Vinohrady",
+		"price": "27 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/764276-nabidka-pronajem-bytu-vaclava-trojana-praha",
+		"location": "Václava Trojana, Praha - Uhříněves",
+		"price": "18 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/782147-nabidka-pronajem-bytu-pernerova-hlavni-mesto-praha",
+		"location": "Pernerova, Praha - Karlín",
+		"price": "13 000 Kč"
+	},
+	{
+		"penb": "C",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/780073-nabidka-pronajem-bytu-kamycka-hlavni-mesto-praha",
+		"location": "Kamýcká, Praha - Suchdol",
+		"price": "17 000 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/302981-nabidka-pronajem-bytu-k-nahonu-praha",
+		"location": "K náhonu, Praha - Hloubětín",
+		"price": "23 000 Kč"
+	},
+	{
+		"penb": "B",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/203963-nabidka-pronajem-bytu-ke-koh-i-nooru",
+		"location": "Ke Koh-i-nooru, Praha - Stodůlky",
+		"price": "23 000 Kč"
+	},
+	{
+		"penb": "A",
+		"url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/780848-nabidka-pronajem-bytu-ruska-praha",
+		"location": "Ruská, Praha - Vršovice",
+		"price": "20 000 Kč"
+	}
+]

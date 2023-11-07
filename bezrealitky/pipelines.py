@@ -7,11 +7,14 @@
 # useful for handling different item types with a single interface
 from scrapy.exceptions import DropItem
 import logging
+from bezrealitky.settings import is_passing
 
 class BezrealitkyPipeline:
     log = {'Nice': 0, 'Bad': 0}
     def process_item(self, item, spider):
-        if item['penb'] in ['A', 'B', 'C']:
+        if is_passing(item):
+        # if (item['penb'] is None or item['penb'] in ['A', 'B', 'C']) and item['has_washer']:
+        # if cadastral in good_cadastrals:
             self.log['Nice'] += 1
             return item
         else:

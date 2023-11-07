@@ -12,3 +12,4 @@ class BezrealitkyItem(scrapy.Item):
     penb = scrapy.Field()
     location = scrapy.Field()
     price = scrapy.Field()
+    has_washer = scrapy.Field()

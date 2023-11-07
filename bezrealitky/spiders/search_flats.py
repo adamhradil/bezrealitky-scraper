@@ -1,6 +1,7 @@
 import scrapy
 from urllib.parse import urlencode
 from ..items import BezrealitkyItem
+from ..settings import is_passing
 
 class SearchFlatsSpider(scrapy.Spider):
     name = "search_flats"
@@ -10,12 +11,13 @@ class SearchFlatsSpider(scrapy.Spider):
         ('estateType', 'BYT'),
         ('disposition', 'DISP_2_KK'),
         ('disposition', 'DISP_2_1'),
-        ('equipped', 'VYBAVENY'),
         ('regionOsmIds', 'R439840'),
+        ('newBuilding', 'true'),
+        ('order', 'PRICE_ASC'),
         ('osm_value', 'Praha, okres Hlavní město Praha, Hlavní město Praha, Praha, Česko')
     ]
     len_params = len(params)
-    start_urls = ["https://bezrealitky.cz/vyhledat?" + urlencode(params)]
+    start_urls = ["https://bezrealitky.cz/vypis?" + urlencode(params)]
 
     def parse(self, response):
         yield from self.for_page(response)
@@ -32,11 +34,16 @@ class SearchFlatsSpider(scrapy.Spider):
             yield scrapy.Request(link, callback=self.filter_flats)
 
     def filter_flats(self, response):
-        return BezrealitkyItem(penb=response.xpath(
+        sklonovani = ['mycka', 'mycky', 'mycky', 'mycek', 'mycce', 'myckam', 'mycku', 'mycky', 'mycce', 'myckach', 'myckou', 'myckami']
+
+        item = BezrealitkyItem(penb=response.xpath(
                 "//div[@class='ParamsTable_paramsTableGroup__IIJ_u']//tr[th='PENB']/td/text()").get(),
                                url=response.url,
                                location=response.xpath("//h1/span/text()").get(),
                                price=response.xpath(
             "(//div[contains(@class, 'mb-lg-9') and contains(@class, 'mb-6')])[1]//strong[contains(@class, 'h4') and contains(@class, 'fw-bold')]/text()")
-            .get().replace('\xa0', ' ')
+            .get().replace('\xa0', ' '),
+                                has_washer=any(i in response.xpath("//p[@class='text-perex-lg']/text()").get().replace("č", "c").replace("á", "a")
+                                               for i in sklonovani)
                                 )
+        return item if is_passing(item) else None

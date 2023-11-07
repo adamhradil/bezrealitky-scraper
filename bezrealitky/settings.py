@@ -7,6 +7,9 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+from bezrealitky.items import BezrealitkyItem
+
+
 BOT_NAME = "bezrealitky"
 
 SPIDER_MODULES = ["bezrealitky.spiders"]
@@ -91,3 +94,11 @@ ITEM_PIPELINES = {
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+
+def is_passing(item: BezrealitkyItem):
+   good_cadastrals = ["Malešice", "Hostivař", "Kyje", "Žižkov", "Vysočany", "Hloubětin", "Hrdlořezy", "Strašnice", "Vinohrady", "Vršovice", "Libeň", "Karlín", "Šterboholy", "Hostavice", "Michle", "Záběhlice", "Prosek"]
+   cadastral = item['location'][(item['location'].find('Praha - ') + 8):]
+   price = int(item['price'].replace(' ', '').replace('Kč', ''))
+   is_affordable = 10000 <= price <= 25000 
+   return (item['penb'] is None or item['penb'] in ['A', 'B', 'C']) and cadastral in good_cadastrals and item['has_washer'] and is_affordable

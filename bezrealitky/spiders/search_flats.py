@@ -4,8 +4,10 @@ from pydispatch import dispatcher
 import scrapy
 from scrapy import signals
 
+from bezrealitky_scraper.bezrealitky.items import BezrealitkyItem
+
 class SearchFlatsSpider(scrapy.Spider):
-    name = "search_flats"
+    name = "bezrealitky"
     allowed_domains = ["bezrealitky.cz"]
     params = [
         ("offerType", "PRONAJEM"),
@@ -48,73 +50,54 @@ class SearchFlatsSpider(scrapy.Spider):
             yield scrapy.Request(link, callback=self.filter_flats)
 
     def filter_flats(self, response):
-        rent = response.xpath(
+        item = BezrealitkyItem()
+        item["url"] = response.url
+        item["rent"] = response.xpath(
             "//span[contains(text(), 'Měsíční nájemné')]/../../following-sibling::*/strong/span/text()"
         ).get()
-        service_fees = response.xpath(
+        item["service_fees"] = response.xpath(
             "//span[contains(text(), '+ Poplatky za služby')]/../../following-sibling::*/strong/span/text()"
         ).get()
-        security_deposit = response.xpath(
+        item["security_deposit"] = response.xpath(
             "//span[contains(text(), '+ Vratná kauce')]/../../following-sibling::*/strong/span/text()"
         ).get()
-        address = response.xpath(
+        item["address"] = response.xpath(
             "//h1[contains(@class, 'mb-3')]/span[contains(@class, 'd-block')]/text()"
         ).get()
-        description = response.xpath(
+        item["description"] = response.xpath(
             "//div[contains(@class, 'box')]/p[contains(@class, 'text-perex-lg')]/text()"
         ).get()
-        disposition = response.xpath(
+        item["disposition"] = response.xpath(
             "//span[.='Dispozice']/../following-sibling::*/a/span/text()"
         ).get()
-        listing_id = response.xpath(
+        item["id"] = response.xpath(
             "//span[.='Číslo inzerátu']/../following-sibling::*/text()"
         ).get()
-        available_from = response.xpath(
+        item["available_from"] = response.xpath(
             "//span[.='Dostupné od']/../following-sibling::*/span/text()"
         ).get()
-        floor = response.xpath(
+        item["floor"] = response.xpath(
             "//span[.='Podlaží']/../following-sibling::*/span/text()"
         ).get()
-        listing_type = response.xpath(
+        item["type"] = response.xpath(
             "//span[.='Typ budovy']/../following-sibling::*/span/text()"
         ).get()
-        area = response.xpath(
+        item["area"] = response.xpath(
             "//span[.='Plocha']/../following-sibling::*/span/text()"
         ).get()
-        furnished = response.xpath(
+        item["furnished"] = response.xpath(
             "//span[.='Vybaveno']/../following-sibling::*/span/text()"
         ).get()
-        status = response.xpath(
+        item["status"] = response.xpath(
             "//span[.='Stav']/../following-sibling::*/span/text()"
         ).get()
-        ownership = response.xpath(
+        item["ownership"] = response.xpath(
             "//span[.='Vlastnictví']/../following-sibling::*/span/text()"
         ).get()
-        penb = response.xpath(
+        item["penb"] = response.xpath(
             "//span[.='PENB']/../following-sibling::*/span/text()"
         ).get()
-        design = response.xpath(
+        item["design"] = response.xpath(
             "//span[.='Provedení']/../following-sibling::*/span/text()"
         ).get()
 
-        self.listings.append(
-            (
-                response.url,
-                rent,
-                service_fees,
-                security_deposit,
-                address,
-                description,
-                disposition,
-                listing_id,
-                available_from,
-                floor,
-                listing_type,
-                area,
-                furnished,
-                status,
-                ownership,
-                penb,
-                design,
-            )
-        )

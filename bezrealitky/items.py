@@ -8,8 +8,20 @@ import scrapy
 
 class BezrealitkyItem(scrapy.Item):
     # define the fields for your item here like:
+    id = scrapy.Field()
+    type = scrapy.Field()
     url = scrapy.Field()
+    rent = scrapy.Field()
+    service_fees = scrapy.Field()
+    security_deposit = scrapy.Field()
+    address = scrapy.Field()
+    description = scrapy.Field()
+    disposition = scrapy.Field()
+    available_from = scrapy.Field()
+    floor = scrapy.Field()
+    area = scrapy.Field()
+    furnished = scrapy.Field()
+    status = scrapy.Field()
+    ownership = scrapy.Field()
     penb = scrapy.Field()
-    location = scrapy.Field()
-    price = scrapy.Field()
-    has_washer = scrapy.Field()
+    design = scrapy.Field()

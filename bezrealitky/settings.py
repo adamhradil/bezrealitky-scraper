@@ -7,9 +7,6 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-from bezrealitky.items import BezrealitkyItem
-
-
 BOT_NAME = "bezrealitky"
 
 SPIDER_MODULES = ["bezrealitky.spiders"]
@@ -17,18 +14,18 @@ NEWSPIDER_MODULE = "bezrealitky.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
+#USER_AGENT = "bezrealitky (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 7
+# CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.8
+# DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -65,9 +62,9 @@ DOWNLOAD_DELAY = 0.8
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   "bezrealitky.pipelines.BezrealitkyPipeline": 300,
-}
+# ITEM_PIPELINES = {
+#    "bezrealitky.pipelines.BezrealitkyPipeline": 300,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -94,11 +91,3 @@ ITEM_PIPELINES = {
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
-
-
-def is_passing(item: BezrealitkyItem):
-   good_cadastrals = ["Malešice", "Hostivař", "Kyje", "Žižkov", "Vysočany", "Hloubětin", "Hrdlořezy", "Strašnice", "Vinohrady", "Vršovice", "Libeň", "Karlín", "Šterboholy", "Hostavice", "Michle", "Záběhlice", "Prosek"]
-   cadastral = item['location'][(item['location'].find('Praha - ') + 8):]
-   price = int(item['price'].replace(' ', '').replace('Kč', ''))
-   is_affordable = 10000 <= price <= 25000 
-   return (item['penb'] is None or item['penb'] in ['A', 'B', 'C']) and cadastral in good_cadastrals and item['has_washer'] and is_affordable

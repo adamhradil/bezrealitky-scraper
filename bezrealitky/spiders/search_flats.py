@@ -9,6 +9,7 @@ from bezrealitky_scraper.bezrealitky.items import BezrealitkyItem
 class SearchFlatsSpider(scrapy.Spider):
     name = "bezrealitky"
     allowed_domains = ["bezrealitky.cz"]
+    # TODO: do this dynamically
     params = [
         ("offerType", "PRONAJEM"),
         ("estateType", "BYT"),
@@ -54,13 +55,13 @@ class SearchFlatsSpider(scrapy.Spider):
         item["url"] = response.url
         item["rent"] = response.xpath(
             "//span[contains(text(), 'Měsíční nájemné')]/../../following-sibling::*/strong/span/text()"
-        ).get()
+        ).get().replace('\xa0', ' ')
         item["service_fees"] = response.xpath(
             "//span[contains(text(), '+ Poplatky za služby')]/../../following-sibling::*/strong/span/text()"
-        ).get()
+        ).get().replace('\xa0', ' ')
         item["security_deposit"] = response.xpath(
             "//span[contains(text(), '+ Vratná kauce')]/../../following-sibling::*/strong/span/text()"
-        ).get()
+        ).get().replace('\xa0', ' ')
         item["address"] = response.xpath(
             "//h1[contains(@class, 'mb-3')]/span[contains(@class, 'd-block')]/text()"
         ).get()

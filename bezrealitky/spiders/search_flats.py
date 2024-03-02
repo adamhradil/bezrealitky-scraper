@@ -100,4 +100,4 @@ class SearchFlatsSpider(scrapy.Spider):
         item["design"] = response.xpath(
             "//span[.='Provedení']/../following-sibling::*/span/text()"
         ).get()
-
+        yield item

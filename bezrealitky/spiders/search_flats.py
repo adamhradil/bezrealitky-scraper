@@ -55,13 +55,19 @@ class SearchFlatsSpider(scrapy.Spider):
         item["url"] = response.url
         item["rent"] = response.xpath(
             "//span[contains(text(), 'Měsíční nájemné')]/../../following-sibling::*/strong/span/text()"
-        ).get().replace('\xa0', ' ')
+        ).get()
+        if item["rent"]:
+            item["service_fees"] = item["rent"].replace('\xa0', ' ')
         item["service_fees"] = response.xpath(
             "//span[contains(text(), '+ Poplatky za služby')]/../../following-sibling::*/strong/span/text()"
-        ).get().replace('\xa0', ' ')
+        ).get()
+        if item["service_fees"]:
+            item["service_fees"] = item["service_fees"].replace('\xa0', ' ')
         item["security_deposit"] = response.xpath(
             "//span[contains(text(), '+ Vratná kauce')]/../../following-sibling::*/strong/span/text()"
-        ).get().replace('\xa0', ' ')
+        ).get()
+        if item["security_deposit"]:
+            item["security_deposit"] = item["security_deposit"].replace('\xa0', ' ')
         item["address"] = response.xpath(
             "//h1[contains(@class, 'mb-3')]/span[contains(@class, 'd-block')]/text()"
         ).get()
@@ -101,4 +107,15 @@ class SearchFlatsSpider(scrapy.Spider):
         item["design"] = response.xpath(
             "//span[.='Provedení']/../following-sibling::*/span/text()"
         ).get()
+        item["balcony"] = response.xpath("//td/span[contains(text(), 'Balkón')]/text()").get()
+        item["cellar"] = response.xpath("//td/span[contains(text(), 'Sklep')]/text()").get()
+        item["front_garden"] = response.xpath("//td/span[contains(text(), 'Předzahrádka')]/text()").get()
+        item["terrace"] = response.xpath("//td/span[contains(text(), 'Terasa')]/text()").get()
+        item["elevator"] = response.xpath("//td/span[contains(text(), 'Výtah')]/text()").get()
+        item["parking"] = response.xpath("//td/span[contains(text(), 'Parkování')]/text()").get()
+        item["garage"] = response.xpath("//td/span[contains(text(), 'Garáž')]/text()").get()
+        item["pets"] = response.xpath("//td/span[contains(text(), 'Domácí mazlíčci vítáni')]/text()").get()
+        item["loggie"] = response.xpath("//td/span[contains(text(), 'Lodžie')]/text()").get()
+        item["public_transport"] = response.xpath("//td/span[contains(text(), 'MHD')]/text()").get()
+
         yield item

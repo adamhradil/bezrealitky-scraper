@@ -27,8 +27,9 @@ class SearchFlatsSpider(scrapy.Spider):
         dispatcher.connect(self.spider_closed, signals.spider_closed)
 
     def spider_closed(self):
-        with open("bezrealitky.json", mode="w", encoding="utf-8") as f:
-            json.dump(self.listings, fp=f, indent=2, ensure_ascii=False)
+        pass
+    #     with open("bezrealitky.json", mode="w", encoding="utf-8") as f:
+    #         json.dump(self.listings, fp=f, indent=2, ensure_ascii=False)
 
     def parse(self, response, **kwargs):
         yield from self.for_page(response)
@@ -57,7 +58,7 @@ class SearchFlatsSpider(scrapy.Spider):
             "//span[contains(text(), 'Měsíční nájemné')]/../../following-sibling::*/strong/span/text()"
         ).get()
         if item["rent"]:
-            item["service_fees"] = item["rent"].replace('\xa0', ' ')
+            item["rent"] = item["rent"].replace('\xa0', ' ')
         item["service_fees"] = response.xpath(
             "//span[contains(text(), '+ Poplatky za služby')]/../../following-sibling::*/strong/span/text()"
         ).get()

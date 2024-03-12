@@ -22,15 +22,6 @@ class SearchFlatsSpider(scrapy.Spider):
     start_urls = ["https://www.bezrealitky.cz/vypis?" + urlencode(params)]
     listings = []
 
-    def __init__(self):
-        super().__init__()
-        dispatcher.connect(self.spider_closed, signals.spider_closed)
-
-    def spider_closed(self):
-        pass
-    #     with open("bezrealitky.json", mode="w", encoding="utf-8") as f:
-    #         json.dump(self.listings, fp=f, indent=2, ensure_ascii=False)
-
     def parse(self, response, **kwargs):
         yield from self.for_page(response)
         for i in range(

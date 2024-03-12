@@ -109,5 +109,6 @@ class SearchFlatsSpider(scrapy.Spider):
         item["pets"] = response.xpath("//td/span[contains(text(), 'Domácí mazlíčci vítáni')]/text()").get()
         item["loggie"] = response.xpath("//td/span[contains(text(), 'Lodžie')]/text()").get()
         item["public_transport"] = response.xpath("//td/span[contains(text(), 'MHD')]/text()").get()
-
+        gps_object = json.loads(response.xpath("//script[@id='__NEXT_DATA__']/text()").get()).get("props").get("pageProps").get("origAdvert").get("gps")
+        item["gps"] = (gps_object.get("lat"), gps_object.get("lng"))
         yield item

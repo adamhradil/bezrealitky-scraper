@@ -35,4 +35,5 @@ class BezrealitkyItem(scrapy.Item):
     pets = scrapy.Field()
     loggie = scrapy.Field()
     public_transport = scrapy.Field()
-    gps = scrapy.Field()
+    gps_lat = scrapy.Field()
+    gps_lon = scrapy.Field()

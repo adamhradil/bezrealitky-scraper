@@ -69,9 +69,9 @@ class SearchFlatsSpider(scrapy.Spider):
         item["disposition"] = response.xpath(
             "//span[.='Dispozice']/../following-sibling::*/a/span/text()"
         ).get()
-        item["id"] = response.xpath(
+        item["id"] = int(response.xpath(
             "//span[.='Číslo inzerátu']/../following-sibling::*/text()"
-        ).get()
+        ).get())
         item["available_from"] = response.xpath(
             "//span[.='Dostupné od']/../following-sibling::*/span/text()"
         ).get()

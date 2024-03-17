@@ -6,6 +6,7 @@ from scrapy import signals
 
 from bezrealitky_scraper.bezrealitky.items import BezrealitkyItem
 
+
 class SearchFlatsSpider(scrapy.Spider):
     name = "bezrealitky"
     allowed_domains = ["bezrealitky.cz"]
@@ -17,6 +18,11 @@ class SearchFlatsSpider(scrapy.Spider):
         ("order", "PRICE_ASC"),
         ("osm_value", "Hlavní město Praha, Praha, Česko"),
         ("currency", "CZK"),
+        ("surfaceFrom", "50"),
+        ("surfaceTo", "80"),
+        ("terraceFrom", "1"),
+        ("garage", "true"),
+        ("currency", "CZK"),
     ]
     len_params = len(params)
     start_urls = ["https://www.bezrealitky.cz/vypis?" + urlencode(params)]
@@ -24,6 +30,18 @@ class SearchFlatsSpider(scrapy.Spider):
 
     def parse(self, response, **kwargs):
         yield from self.for_page(response)
+
+        page_links = response.xpath("//a[@class='page-link']//text()")
+        if len(page_links) == 2:
+            if len(self.params) == self.len_params:
+                self.params.append(("page", 2))
+            else:
+                self.params[self.len_params] = ("page", 2)
+            yield scrapy.Request(
+                "https://www.bezrealitky.cz/vyhledat?" + urlencode(self.params)
+            )
+            return
+
         for i in range(
             2, int(response.xpath("//a[@class='page-link']//text()")[1].get()) + 1
         ):

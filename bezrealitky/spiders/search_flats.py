@@ -101,7 +101,7 @@ class SearchFlatsSpider(scrapy.Spider):
         ).get()
         item["balcony"] = response.xpath("//td/span[contains(text(), 'Balkón')]/text()").get()
         item["cellar"] = response.xpath("//td/span[contains(text(), 'Sklep')]/text()").get()
-        item["front_garden"] = response.xpath("//td/span[contains(text(), 'Předzahrádka')]/text()").get()
+        item["garden"] = response.xpath("//td/span[contains(text(), 'Předzahrádka')]/text()").get()
         item["terrace"] = response.xpath("//td/span[contains(text(), 'Terasa')]/text()").get()
         item["elevator"] = response.xpath("//td/span[contains(text(), 'Výtah')]/text()").get()
         item["parking"] = response.xpath("//td/span[contains(text(), 'Parkování')]/text()").get()

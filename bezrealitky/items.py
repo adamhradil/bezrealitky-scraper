@@ -27,7 +27,7 @@ class BezrealitkyItem(scrapy.Item):
     design = scrapy.Field()
     balcony = scrapy.Field()
     cellar = scrapy.Field()
-    front_garden = scrapy.Field()
+    garden = scrapy.Field()
     terrace = scrapy.Field()
     elevator = scrapy.Field()
     parking = scrapy.Field()

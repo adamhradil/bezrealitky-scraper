@@ -18,10 +18,10 @@ class SearchFlatsSpider(scrapy.Spider):
         ("order", "PRICE_ASC"),
         ("osm_value", "Hlavní město Praha, Praha, Česko"),
         ("currency", "CZK"),
-        ("surfaceFrom", "50"),
-        ("surfaceTo", "80"),
-        ("terraceFrom", "1"),
-        ("garage", "true"),
+        # ("surfaceFrom", "50"),
+        # ("surfaceTo", "80"),
+        # ("terraceFrom", "1"),
+        # ("garage", "true"),
         ("currency", "CZK"),
     ]
     len_params = len(params)

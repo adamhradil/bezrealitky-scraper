@@ -1,8 +1,6 @@
 from urllib.parse import urlencode
 import json
-from pydispatch import dispatcher
 import scrapy
-from scrapy import signals
 
 from bezrealitky_scraper.bezrealitky.items import BezrealitkyItem
 

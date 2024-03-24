@@ -16,6 +16,7 @@ class SearchFlatsSpider(scrapy.Spider):
             "rent": "PRONAJEM",
             "sale": "PRODEJ",
             "apartment": "BYT",
+            "house": "DUM",
             "Praha": {
                 "osm_value": "Hlavní město Praha, Praha, Česko",
                 "regionOsmIds": "R435514",

@@ -14,6 +14,7 @@ class SearchFlatsSpider(scrapy.Spider):
 
         params_mapping = {
             "rent": "PRONAJEM",
+            "sale": "PRODEJ",
             "apartment": "BYT",
             "Praha": {
                 "osm_value": "Hlavní město Praha, Praha, Česko",

@@ -15,14 +15,25 @@ class SearchFlatsSpider(scrapy.Spider):
         params_mapping = {
             "rent": "PRONAJEM",
             "apartment": "BYT",
-            "Praha": ["Hlavní město Praha, Praha, Česko", "R435514"],
+            "Praha": {
+                "osm_value": "Hlavní město Praha, Praha, Česko",
+                "regionOsmIds": "R435514",
+            },
+            "Brno": {
+                "osm_value": "Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, Česko",
+                "regionOsmIds": "R438171",
+            },
+            "Ostrava": {
+                "osm_value": "Ostrava, okres Ostrava-město, Moravskoslezský kraj, Moravskoslezsko, Česko",
+                "regionOsmIds": "R437354",
+            },
         }
 
         self.params = [
             ("offerType", params_mapping[spider_settings['listing_type']]),
             ("estateType", params_mapping[spider_settings['estate_type']]),
-            ("osm_value", params_mapping[spider_settings['location']][0]),
-            ("regionOsmIds",  params_mapping[spider_settings['location']][1]),
+            ("osm_value", params_mapping[spider_settings['location']]['osm_value']),
+            ("regionOsmIds",  params_mapping[spider_settings['location']]['regionOsmIds']),
             ("order", "PRICE_ASC"),
             ("currency", "CZK"),
         ]

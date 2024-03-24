@@ -79,7 +79,7 @@ class SearchFlatsSpider(scrapy.Spider):
         item = BezrealitkyItem()
         item["url"] = response.url
         item["rent"] = response.xpath(
-            "//span[contains(text(), 'Měsíční nájemné')]/../../following-sibling::*/strong/span/text()"
+            "//span[contains(text(), 'Měsíční nájemné') or contains(text(), 'Cena')]/../../following-sibling::*/strong/span/text()"
         ).get()
         if item["rent"]:
             item["rent"] = item["rent"].replace('\xa0', ' ')

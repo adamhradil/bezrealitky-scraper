@@ -8,23 +8,27 @@ from bezrealitky_scraper.bezrealitky.items import BezrealitkyItem
 class SearchFlatsSpider(scrapy.Spider):
     name = "bezrealitky"
     allowed_domains = ["bezrealitky.cz"]
-    # TODO: do this dynamically
-    params = [
-        ("offerType", "PRONAJEM"),
-        ("estateType", "BYT"),
-        ("regionOsmIds", "R435514"),
-        ("order", "PRICE_ASC"),
-        ("osm_value", "Hlavní město Praha, Praha, Česko"),
-        ("currency", "CZK"),
-        # ("surfaceFrom", "50"),
-        # ("surfaceTo", "80"),
-        # ("terraceFrom", "1"),
-        # ("garage", "true"),
-        ("currency", "CZK"),
-    ]
-    len_params = len(params)
-    start_urls = ["https://www.bezrealitky.cz/vypis?" + urlencode(params)]
-    listings = []
+
+    def __init__(self, spider_settings: dict, *args, **kwargs):
+        super(SearchFlatsSpider, self).__init__(*args, **kwargs)
+
+        params_mapping = {
+            "rent": "PRONAJEM",
+            "apartment": "BYT",
+            "Praha": ["Hlavní město Praha, Praha, Česko", "R435514"],
+        }
+
+        self.params = [
+            ("offerType", params_mapping[spider_settings['listing_type']]),
+            ("estateType", params_mapping[spider_settings['estate_type']]),
+            ("osm_value", params_mapping[spider_settings['location']][0]),
+            ("regionOsmIds",  params_mapping[spider_settings['location']][1]),
+            ("order", "PRICE_ASC"),
+            ("currency", "CZK"),
+        ]
+
+        self.start_urls = ["https://www.bezrealitky.cz/vypis?" + urlencode(self.params)]
+        self.len_params = len(self.params)
 
     def parse(self, response, **kwargs):
         yield from self.for_page(response)

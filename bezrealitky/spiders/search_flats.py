@@ -47,6 +47,8 @@ class SearchFlatsSpider(scrapy.Spider):
         yield from self.for_page(response)
 
         page_links = response.xpath("//a[@class='page-link']//text()")
+        if len(page_links) == 0:
+            return
         if len(page_links) == 2:
             if len(self.params) == self.len_params:
                 self.params.append(("page", 2))

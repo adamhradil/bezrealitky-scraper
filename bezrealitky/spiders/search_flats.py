@@ -117,7 +117,7 @@ class SearchFlatsSpider(scrapy.Spider):
             "//span[.='Typ budovy']/../following-sibling::*/span/text()"
         ).get()
         item["area"] = response.xpath(
-            "//span[.='Plocha']/../following-sibling::*/span/text()"
+            "//span[.='Užitná plocha']/../following-sibling::*/span/text()"
         ).get()
         item["furnished"] = response.xpath(
             "//span[.='Vybaveno']/../following-sibling::*/span/text()"
@@ -141,9 +141,9 @@ class SearchFlatsSpider(scrapy.Spider):
         item["elevator"] = response.xpath("//td/span[contains(text(), 'Výtah')]/text()").get()
         item["parking"] = response.xpath("//td/span[contains(text(), 'Parkování')]/text()").get()
         item["garage"] = response.xpath("//td/span[contains(text(), 'Garáž')]/text()").get()
-        item["pets"] = response.xpath("//td/span[contains(text(), 'Domácí mazlíčci vítáni')]/text()").get()
+        # item["pets"] = response.xpath("//td/span[contains(text(), 'Domácí mazlíčci vítáni')]/text()").get()
         item["loggie"] = response.xpath("//td/span[contains(text(), 'Lodžie')]/text()").get()
-        item["public_transport"] = response.xpath("//td/span[contains(text(), 'MHD')]/text()").get()
+        # item["public_transport"] = response.xpath("//td/span[contains(text(), 'MHD')]/text()").get()
         gps_object = json.loads(response.xpath("//script[@id='__NEXT_DATA__']/text()").get()).get("props").get("pageProps").get("origAdvert").get("gps")
         item["gps_lat"] = gps_object.get("lat")
         item["gps_lon"] = gps_object.get("lng")

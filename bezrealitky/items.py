@@ -11,7 +11,7 @@ class BezrealitkyItem(scrapy.Item):
     id = scrapy.Field()
     type = scrapy.Field()
     url = scrapy.Field()
-    rent = scrapy.Field()
+    price = scrapy.Field()
     service_fees = scrapy.Field()
     security_deposit = scrapy.Field()
     address = scrapy.Field()

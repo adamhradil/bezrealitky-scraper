@@ -80,11 +80,11 @@ class SearchFlatsSpider(scrapy.Spider):
     def filter_flats(self, response):
         item = BezrealitkyItem()
         item["url"] = response.url
-        item["rent"] = response.xpath(
+        item["price"] = response.xpath(
             "//span[contains(text(), 'Měsíční nájemné') or contains(text(), 'Cena')]/../../following-sibling::*/strong/span/text()"
         ).get()
-        if item["rent"]:
-            item["rent"] = item["rent"].replace('\xa0', ' ')
+        if item["price"]:
+            item["price"] = item["price"].replace('\xa0', ' ')
         item["service_fees"] = response.xpath(
             "//span[contains(text(), '+ Poplatky za služby')]/../../following-sibling::*/strong/span/text()"
         ).get()

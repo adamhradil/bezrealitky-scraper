@@ -32,10 +32,13 @@ class SearchFlatsSpider(scrapy.Spider):
         }
 
         self.params = [
-            ("offerType", params_mapping[spider_settings['listing_type']]),
-            ("estateType", params_mapping[spider_settings['estate_type']]),
-            ("osm_value", params_mapping[spider_settings['location']]['osm_value']),
-            ("regionOsmIds",  params_mapping[spider_settings['location']]['regionOsmIds']),
+            ("offerType", params_mapping[spider_settings["listing_type"]]),
+            ("estateType", params_mapping[spider_settings["estate_type"]]),
+            ("osm_value", params_mapping[spider_settings["location"]]["osm_value"]),
+            (
+                "regionOsmIds",
+                params_mapping[spider_settings["location"]]["regionOsmIds"],
+            ),
             ("order", "PRICE_ASC"),
             ("currency", "CZK"),
         ]
@@ -84,17 +87,17 @@ class SearchFlatsSpider(scrapy.Spider):
             "//span[contains(text(), 'Měsíční nájemné') or contains(text(), 'Cena')]/../../following-sibling::*/strong/span/text()"
         ).get()
         if item["price"]:
-            item["price"] = item["price"].replace('\xa0', ' ')
+            item["price"] = item["price"].replace("\xa0", " ")
         item["service_fees"] = response.xpath(
             "//span[contains(text(), '+ Poplatky za služby')]/../../following-sibling::*/strong/span/text()"
         ).get()
         if item["service_fees"]:
-            item["service_fees"] = item["service_fees"].replace('\xa0', ' ')
+            item["service_fees"] = item["service_fees"].replace("\xa0", " ")
         item["security_deposit"] = response.xpath(
             "//span[contains(text(), '+ Vratná kauce')]/../../following-sibling::*/strong/span/text()"
         ).get()
         if item["security_deposit"]:
-            item["security_deposit"] = item["security_deposit"].replace('\xa0', ' ')
+            item["security_deposit"] = item["security_deposit"].replace("\xa0", " ")
         item["address"] = response.xpath(
             "//h1[contains(@class, 'mb-3')]/span[contains(@class, 'd-block')]/text()"
         ).get()
@@ -104,9 +107,11 @@ class SearchFlatsSpider(scrapy.Spider):
         item["disposition"] = response.xpath(
             "//span[.='Dispozice']/../following-sibling::*/a/span/text()"
         ).get()
-        item["id"] = int(response.xpath(
-            "//span[.='Číslo inzerátu']/../following-sibling::*/text()"
-        ).get())
+        item["id"] = int(
+            response.xpath(
+                "//span[.='Číslo inzerátu']/../following-sibling::*/text()"
+            ).get()
+        )
         item["available_from"] = response.xpath(
             "//span[.='Dostupné od']/../following-sibling::*/span/text()"
         ).get()
@@ -134,17 +139,39 @@ class SearchFlatsSpider(scrapy.Spider):
         item["design"] = response.xpath(
             "//span[.='Provedení']/../following-sibling::*/span/text()"
         ).get()
-        item["balcony"] = response.xpath("//td/span[contains(text(), 'Balkón')]/text()").get()
-        item["cellar"] = response.xpath("//td/span[contains(text(), 'Sklep')]/text()").get()
-        item["garden"] = response.xpath("//td/span[contains(text(), 'Předzahrádka')]/text()").get()
-        item["terrace"] = response.xpath("//td/span[contains(text(), 'Terasa')]/text()").get()
-        item["elevator"] = response.xpath("//td/span[contains(text(), 'Výtah')]/text()").get()
-        item["parking"] = response.xpath("//td/span[contains(text(), 'Parkování')]/text()").get()
-        item["garage"] = response.xpath("//td/span[contains(text(), 'Garáž')]/text()").get()
+        item["balcony"] = response.xpath(
+            "//td/span[contains(text(), 'Balkón')]/text()"
+        ).get()
+        item["cellar"] = response.xpath(
+            "//td/span[contains(text(), 'Sklep')]/text()"
+        ).get()
+        item["garden"] = response.xpath(
+            "//td/span[contains(text(), 'Předzahrádka')]/text()"
+        ).get()
+        item["terrace"] = response.xpath(
+            "//td/span[contains(text(), 'Terasa')]/text()"
+        ).get()
+        item["elevator"] = response.xpath(
+            "//td/span[contains(text(), 'Výtah')]/text()"
+        ).get()
+        item["parking"] = response.xpath(
+            "//td/span[contains(text(), 'Parkování')]/text()"
+        ).get()
+        item["garage"] = response.xpath(
+            "//td/span[contains(text(), 'Garáž')]/text()"
+        ).get()
         # item["pets"] = response.xpath("//td/span[contains(text(), 'Domácí mazlíčci vítáni')]/text()").get()
-        item["loggie"] = response.xpath("//td/span[contains(text(), 'Lodžie')]/text()").get()
+        item["loggie"] = response.xpath(
+            "//td/span[contains(text(), 'Lodžie')]/text()"
+        ).get()
         # item["public_transport"] = response.xpath("//td/span[contains(text(), 'MHD')]/text()").get()
-        gps_object = json.loads(response.xpath("//script[@id='__NEXT_DATA__']/text()").get()).get("props").get("pageProps").get("origAdvert").get("gps")
+        gps_object = (
+            json.loads(response.xpath("//script[@id='__NEXT_DATA__']/text()").get())
+            .get("props")
+            .get("pageProps")
+            .get("origAdvert")
+            .get("gps")
+        )
         item["gps_lat"] = gps_object.get("lat")
         item["gps_lon"] = gps_object.get("lng")
         yield item

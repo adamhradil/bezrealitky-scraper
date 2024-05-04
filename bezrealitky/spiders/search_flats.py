@@ -13,10 +13,10 @@ class SearchFlatsSpider(scrapy.Spider):
         super(SearchFlatsSpider, self).__init__(*args, **kwargs)
 
         params_mapping = {
-            "rent": "PRONAJEM",
-            "sale": "PRODEJ",
-            "apartment": "BYT",
-            "house": "DUM",
+            "pronájem": "PRONAJEM",
+            "prodej": "PRODEJ",
+            "byt": "BYT",
+            "dům": "DUM",
             "Praha": {
                 "osm_value": "Hlavní město Praha, Praha, Česko",
                 "regionOsmIds": "R435514",

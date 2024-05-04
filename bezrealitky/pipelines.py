@@ -6,10 +6,10 @@
 
 # useful for handling different item types with a single interface
 
+
 class BezrealitkyPipeline:
     def process_item(self, item, spider):
         return item
 
     def close_spider(self, spider):
         pass
-

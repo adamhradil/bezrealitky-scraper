@@ -41,6 +41,7 @@ class SearchFlatsSpider(scrapy.Spider):
             ),
             ("order", "PRICE_ASC"),
             ("currency", "CZK"),
+            ("location", "exact"),
         ]
 
         self.start_urls = ["https://www.bezrealitky.cz/vypis?" + urlencode(self.params)]
